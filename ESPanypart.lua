@@ -85,10 +85,10 @@ local function createHighlight(target, color)
         local highlight = Instance.new("Highlight")
         highlight.Adornee = target
         highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-        highlight.FillColor = color -- Заданный цвет
-        highlight.FillTransparency = 0.5 -- Прозрачность заливки
-        highlight.OutlineColor = Color3.new(1, 1, 1) -- Белый цвет контура
-        highlight.OutlineTransparency = 0 -- Непрозрачный контур
+        highlight.FillColor = color 
+        highlight.FillTransparency = 0.5 
+        highlight.OutlineColor = Color3.new(1, 1, 1) 
+        highlight.OutlineTransparency = 0 
         highlight.Parent = target
     end
 end
@@ -104,13 +104,13 @@ end
 confirmButton.MouseButton1Click:Connect(function()
     local targetName = textBox.Text
     if targetName ~= "" then
-        -- Преобразуем значения RGB из слайдеров
+        
         local red = tonumber(redSlider.Text) or 255
         local green = tonumber(greenSlider.Text) or 0
         local blue = tonumber(blueSlider.Text) or 0
         local color = Color3.new(red / 255, green / 255, blue / 255)
 
-        -- Обновляем подсветку
+        
         updateHighlights(targetName, color)
     end
 end)
